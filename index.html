@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sangeet - Hindi Music Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="player-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-music"></i>
+        <h1>Sangeet</h1>
+      </div>
+      <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main player section -->
+    <main class="player-content">
+      <!-- Now playing section -->
+      <div class="now-playing">
+        <div class="album-art">
+          <img id="album-cover" src="" alt="Album cover">
+          <div class="song-info-overlay">
+            <h2 id="song-title"></h2>
+            <p id="song-artist"></p>
+          </div>
+        </div>
+
+        <!-- Player controls -->
+        <div class="player-controls">
+          <!-- Progress bar -->
+          <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <div class="progress-bar">
+              <div class="progress"></div>
+              <input type="range" id="seek-slider" min="0" max="100" value="0">
+            </div>
+            <span id="duration">0:00</span>
+          </div>
+
+          <!-- Control buttons -->
+          <div class="control-buttons">
+            <button id="prev-btn" class="control-btn">
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button id="play-btn" class="play-btn">
+              <i class="fas fa-play"></i>
+            </button>
+            <button id="next-btn" class="control-btn">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+
+          <!-- Volume control -->
+          <div class="volume-container">
+            <button id="mute-btn" class="volume-btn">
+              <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider">
+              <div class="volume-progress"></div>
+              <input type="range" id="volume-control" min="0" max="100" value="75">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playlist section -->
+      <div class="playlist-container">
+        <div class="playlist-header">
+          <h2>Hindi Hits Playlist</h2>
+          <button id="shuffle-btn" class="shuffle-btn">
+            <i class="fas fa-random"></i>
+            Shuffle
+          </button>
+        </div>
+        <ul id="playlist" class="playlist"></ul>
+      </div>
+    </main>
+  </div>
+
+  <!-- YouTube API will insert an iframe here -->
+  <div id="youtube-player"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
